@@ -23,13 +23,17 @@
 - 상황별 자연어 질문에 대한 RAG 기반 응답
 - 부가가치세 중심 (일반/간이과세자 구분, 공제 가능 여부, 신고 대상 등)
 - Streamlit 기반 간편 UI 제공
-- 문서 출처를 포함한 응답으로 신뢰도 확보
+
 
 ## 사용 예시
 
-> 💬 “간이과세자인데, 세금계산서 안 끊으면 과태료 있나요?”
+> 💬 “나는 임대업을 하고 있어. 간이과세자이긴 한데, 세금계산서 안 끊으면 가산세 있어??”
 
 → 📖 
+간이과세자의 경우, 세금계산서를 발급하지 않으면 가산세가 부과됩니다. 구체적으로는 다음과 같습니다:
+- **세금계산서 미발급 가산세**: 공급가액의 2%가 가산세로 부과됩니다.
+  
+따라서, 임대업을 하시는 간이과세자라면 세금계산서를 발급하지 않은 경우 가산세가 발생할 수 있으니, 가능한 한 빨리 세금계산서를 발급하고 신고를 진행하는 것이 좋습니다. 추가로 궁금한 점이 있으면 언제든지 말씀해 주세요!
 
 ## 특징
 
@@ -39,6 +43,28 @@
 공제 가능한 매입세액 총합과 합계표를 자동 계산함.
 
 - 예상 납부세액 추정 기능까지 연계 가능
+
+## 파일 구조
+
+```
+LangChainThon/
+├── README.md ← 프로젝트 개요 및 사용법
+├── requirements.txt ← 필요한 패키지 목록
+├── src/ ← 핵심 코드
+│ ├── main.py ← 실행 스크립트
+│ └── utils.py ← 유틸 함수 모음
+├── notebooks/ ← Jupyter 노트북 데모
+│ └── demo.ipynb ← 기능 시연용 노트북
+├── scripts/ ← 자동화 스크립트
+│ └── run_demo.sh ← 실행 스크립트 예시
+├── data/ ← 샘플 데이터
+│ └── sample.csv
+├── images/ ← 스크린샷 및 GIF
+│ └── demo.gif
+├── videos/ ← mp4 시연 영상 (링크 참고용)
+│ └── demo.mp4
+└── .gitignore
+```
 
 ## 기술 스택 
 
@@ -77,6 +103,17 @@
 
 ## 향후 발전 방향
 
-- 부가가치세 외에도 종합소득세, 근로·자녀장려금 등으로 확장 가능
-- 간단한 계산기, 신고 일정 알림, 홈택스 안내 등 실무 지원 기능 추가
-  - 장기적으로는 **소규모 사업자를 위한 종합 세무지원 챗봇**으로 발전 가능
+
+## Ref
+
+### 코드 뼈대
+- [이토록 쉬운 RAG 시스템 구축을 위한 랭체인 실전 가이드](https://www.yes24.com/product/goods/136548871)
+
+### 데이터셋 
+- [[국세청] 부가가치세 신고 안내 매뉴얼](https://www.nts.go.kr/nts/na/ntt/selectNttList.do?mi=2409&bbsId=30008)
+- [[국세청] 부가가치세 주요해석사례](https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=9623&cntntsId=8249)
+- [마일스톤](https://milestoneguide.oopy.io/e5ee3a8c-7373-46fd-9c64-703053bcca6c)
+- [Jobis](https://help.jobis.co/hc/ko/articles/8942135736857--%EB%B6%80%EA%B0%80%EA%B0%80%EC%B9%98%EC%84%B8-%EC%8B%A0%EA%B3%A0%EA%B0%80-%EC%9E%98%EB%AA%BB%EB%90%90%EB%8B%A4%EB%A9%B4-%EC%88%98%EC%A0%95%EC%8B%A0%EA%B3%A0vs%EA%B2%BD%EC%A0%95%EC%B2%AD%EA%B5%AC)
+- [SAMIL](https://www.samili.com/opt/Sangdam/NtsSangdamView.asp?backFlag=True&div_cate=smb&idx_no=214336&method=content&op=2&op2=5&page=38&sd_cate=sa3&searchword=&selsemok=%EC%A0%84%EC%B2%B4&)
+- [세무이슈와 업종별 세무회계 가이드](https://blog.guide.taxmedicenter.com/333)
+
