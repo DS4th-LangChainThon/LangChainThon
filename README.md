@@ -29,6 +29,7 @@ LangChainThon/
 ├── 🗂️ data/ # 데이터 저장 폴더
 ├── 🗂️ docs/ # 문서 및 참고 자료
 │ └── 성능_검증용_질문_10가지.pdf # 챗봇 응답 평가용 기준 질문 PDF
+│ └── LangChainThon_부가세는_처음이라.pdf # 발표 자료 ppt
 ├── README.md # 프로젝트 개요 및 사용법
 ├── packages.txt # 설치된 패키지 목록
 ├── requirements.txt # 실행에 필요한 Python 패키지 목록
